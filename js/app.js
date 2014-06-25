@@ -3,21 +3,32 @@ var app = angular.module( 'myApp', [] );
 app.run( init );
 app.controller( 'Hola', hola );
 app.controller( 'Adios', adios );
+app.service( 'Usuario', usuario );
 
-init.$inject = ['$rootScope'];
-function init ( $rootScope ) {
+init.$inject = ['$rootScope', 'Usuario'];
+function init ( $rootScope, Usuario ) {
   console.log( $rootScope );
-  $rootScope.nombre = 'Daniel';
+  $rootScope.nombre = Usuario.nombre;
 }
 
-hola.$inject = ['$scope'];
-function hola ( $scope ) {
-  console.log('Hola : ');
+hola.$inject = ['$scope', 'Usuario'];
+function hola ( $scope, Usuario ) {
+  console.log( 'Hola : ' );
   console.log( $scope );
+  $scope.nombre = Usuario.nombre;
 }
 
-adios.$inject = ['$scope'];
-function adios ( $scope ) {
-  console.log('Adios : ');
+adios.$inject = ['$scope', 'Usuario'];
+function adios ( $scope, Usuario ) {
+  console.log( 'Adios : ' );
   console.log( $scope );
+  $scope.nombre = Usuario.nombre;
+}
+
+function usuario () {
+  var user = {
+    nombre: 'Pedro'
+  };
+
+  return user;
 }
