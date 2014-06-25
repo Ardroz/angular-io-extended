@@ -5,9 +5,21 @@
   </head>
 
   <body>
-    <h1>Hola {{nombre}}</h1>
+    <h1>{{nombre}}</h1>
     <br>
     <input ng-model = 'nombre'>
+
+    <div ng-controller = 'Hola'>
+      <hr>
+      <h2>{{hola}} {{nombre}}</h2>
+      <input ng-model = 'hola'>
+    </div>
+
+    <div ng-controller = 'Adios'>
+      <hr>
+      <h2>{{adios}} {{nombre}}</h2>
+      <input ng-model = 'adios'>
+    </div>
 
     <script src = 'bower_components/angular/angular.min.js'></script>
     <script src = 'js/app.js'></script>
