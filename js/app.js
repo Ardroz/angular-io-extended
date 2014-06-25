@@ -32,3 +32,7 @@ function usuario () {
 
   return user;
 }
+
+//.controller('HomeController', ['$scope', '$q', function($scope, $q) {
+// ...
+//}]);
